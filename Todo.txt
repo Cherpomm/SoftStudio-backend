@@ -1,0 +1,6 @@
+DATA ANNOTATIONS
+CompareAttribute -> password & Confirm password
+EmailAddressAttribute -> email for registration
+StringLengthAttribut -> Content & Comment String length
+
+dotnet dev-certs https --trust
