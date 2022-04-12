@@ -1,8 +1,19 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using dhamma.Models;
+using System;
+using System.IO;
+using System.Text.Json;
 
 namespace dhamma.Controllers{
+    public void LoadJson()
+    {
+        using(StreamReader r = new StreamReader("~/D"))
+        {
+            
+        }
+    }
+
     [ApiController]
     [Route("api/[controller]")]
     public class ContentsController : ControllerBase
