@@ -4,6 +4,7 @@ using dhamma.Models;
 using System;
 using System.IO;
 using System.Text.Json;
+using static dhamma.Models.User;
 
 
 namespace dhamma.Controllers{
@@ -15,8 +16,7 @@ namespace dhamma.Controllers{
         [HttpGet]
         public IActionResult Get()
         {   
-            User test_user = new User(16,"C","G","mail");
-            string result  = test_user.Register_user();
+            string result = Register_User("uname","passworldd","name","lname","@email.com");
             return Ok(result);
         }
 
