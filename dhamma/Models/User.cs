@@ -29,16 +29,31 @@ public class User
     public String Status {get; set;}
 
 
-    public void cancle_member(){
-        this.Status = "Cancle";
+    public static void cancle_member(int userId){
+        var user_list = getAllUsers();
+        foreach (User user in user_list) {
+            if(user.UserId== userId) {
+                user.Status = "Cancled";
+            }
+        }
+        var newJson = JsonConvert.SerializeObject(user_list, Formatting.Indented);
+        File.WriteAllText("./Database/User.json",newJson);
+        
+
     }
-    public void banned_user(int adminId ) {
+    public static void banned_user(int userId, int adminId ) {
         if (isAdmin(adminId)) {
-            this.Status = "Banned by : " + (-1*adminId).ToString();
+            var user_list = getAllUsers();
+            foreach(User user in user_list){
+                if(user.UserId == userId){
+                    user.Status = "Banned by : " + (-1*adminId).ToString();
+                }
+            }
         }
     }
     public static Boolean isAdmin(int admindId){
         // we will use adminId as minus number
+        // have to check if it in Admin.json but not now 
         return admindId < 0 ;
     }
     public static Boolean User_Login(String username, String password){
@@ -55,6 +70,24 @@ public class User
         
      
         
+    }
+    public static List<User> getAllUsers(){
+        StreamReader r = new StreamReader("./Database/User.json");
+        String temp_json = r.ReadToEnd();
+        r.Close();
+        var user_list = JsonConvert.DeserializeObject<List<User>>(temp_json);
+        return user_list;
+    }
+    public static User GetUserbyId(int userId) {
+        var user_list = getAllUsers();
+        foreach (User user  in user_list ){
+            if(user.UserId == userId){
+                return user; 
+            }
+            
+
+        }
+        return null;
     }
 
 
