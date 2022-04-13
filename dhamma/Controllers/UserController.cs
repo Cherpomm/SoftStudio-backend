@@ -10,12 +10,14 @@ namespace dhamma.Controllers{
     
     [ApiController]
     [Route("api/[controller]")]
-    public class ContentsController : ControllerBase
+    public class UserController : ControllerBase
     {
         [HttpGet]
         public IActionResult Get()
-        {
-            return Ok("Reading all the contents.");
+        {   
+            User test_user = new User(16,"C","G","mail");
+            string result  = test_user.Register_user();
+            return Ok(result);
         }
 
         [HttpGet("{id}")]

@@ -24,3 +24,33 @@ E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\refint\dhamm
 E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.pdb
 E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.genruntimeconfig.cache
 E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\ref\dhamma.dll
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.AssemblyReference.cache
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.AssemblyInfoInputs.cache
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.AssemblyInfo.cs
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.RazorAssemblyInfo.cache
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.RazorAssemblyInfo.cs
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.dll
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\refint\dhamma.dll
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.pdb
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\appsettings.Development.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\appsettings.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\ContentDatabase.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\dhamma.staticwebassets.runtime.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\dhamma.exe
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\dhamma.deps.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\dhamma.runtimeconfig.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\dhamma.dll
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\dhamma.pdb
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\staticwebassets.build.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\staticwebassets.development.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\scopedcss\bundle\dhamma.styles.css
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\scopedcss\projectbundle\dhamma.bundle.scp.css
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.genruntimeconfig.cache
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\ref\dhamma.dll
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\User.json
+D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.CopyComplete

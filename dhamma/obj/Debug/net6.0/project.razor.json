@@ -1,5 +1,5 @@
 {
-  "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
+  "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\dhamma.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16298,38 +16298,38 @@
   "RootNamespace": "dhamma",
   "Documents": [
     {
-      "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\Views\\Home\\Privacy.cshtml",
+      "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\Views\\_ViewImports.cshtml",
+      "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\Views\\Home\\Index.cshtml",
+      "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     }
   ],
