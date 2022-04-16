@@ -3,9 +3,10 @@ using System.Diagnostics;
 namespace dhamma.Models;
 
 
+
 public class Admin
 {
-    public static int nowId  = -1 ;
+    public static int nowId  = 0 ;
 
     public Admin(int cur_id , String Adminname , String password , String name,String lastname ,  String email)
     {
@@ -29,9 +30,19 @@ public class Admin
     public String Status {get; set;}
 
 
-    public void cancle_member(){
-        this.Status = "Cancle";
+    public static void cancle_member(int AdminId){
+        var Admin_list = getAllAdmins();
+        foreach (Admin Admin in Admin_list) {
+            if(Admin.AdminId== AdminId) {
+                Admin.Status = "Cancled";
+            }
+        }
+        var newJson = JsonConvert.SerializeObject(Admin_list, Formatting.Indented);
+        File.WriteAllText("./Database/Admin.json",newJson);
+        
+
     }
+    
     
     public static Boolean Admin_Login(String Adminname, String password){
         StreamReader r = new StreamReader("./Database/Admin.json");
@@ -45,9 +56,43 @@ public class Admin
         }
         return false;
         
-     
+
         
     }
+    public static List<Admin> getAllAdmins(){
+        String temp_json = getAllAdmins_JSON();
+        var Admin_list = JsonConvert.DeserializeObject<List<Admin>>(temp_json);
+        return Admin_list;
+    }
+    public static String getAllAdmins_JSON() {
+        StreamReader r = new StreamReader("./Database/Admin.json");
+        String temp_json = r.ReadToEnd();
+        r.Close();
+        return temp_json;
+    }
+    public static Admin GetAdminbyId(int AdminId) {
+        var Admin_list = getAllAdmins();
+        foreach (Admin Admin  in Admin_list ){
+            if(Admin.AdminId == AdminId){
+                return Admin; 
+            }
+            
+
+        }
+        return null;
+    }
+    public static String GetAdminbyId_JSON(int AdminId){
+        Admin Admin = GetAdminbyId(AdminId);
+        if( Admin == null){
+            return "invalid AdminId";
+        }
+        String json_Admin = JsonConvert.SerializeObject(Admin, Formatting.Indented);
+        return json_Admin ; 
+        
+
+    }
+  
+    
 
 
     public void append_Admin() {
@@ -68,7 +113,7 @@ public class Admin
         
         Admin newAdmin  = new Admin(nowId, Adminname , password, name,lastname, email);
         newAdmin.append_Admin();
-        nowId  -=1; 
+        nowId  +=1; 
         return "Success";
     }
     
