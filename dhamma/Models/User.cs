@@ -52,7 +52,7 @@ public class User
             }
         }
     }
-    public static Boolean isAdmin(int admindId){
+    public static Boolean isAdmin(int adminId){
         // we will use adminId as minus number
         // have to check if it in Admin.json but not now 
         StreamReader r = new StreamReader("./Database/Admin.json");
@@ -60,7 +60,7 @@ public class User
         r.Close();
         var Admins = JsonConvert.DeserializeObject<List<Admin>>(temp_json);
         foreach(Admin admin in Admins){
-            if(admin.AdminId == admindId ){
+            if(admin.AdminId == adminId ){
                 return true; 
             }
         }
@@ -108,6 +108,9 @@ public class User
     }
     public static String GetUserbyId_JSON(int userId){
         User user = GetUserbyId(userId);
+        if( user == null){
+            return "invalid userId";
+        }
         String json_user = JsonConvert.SerializeObject(user, Formatting.Indented);
         return json_user ; 
         
