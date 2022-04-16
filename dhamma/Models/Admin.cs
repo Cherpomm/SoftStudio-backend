@@ -113,7 +113,7 @@ public class Admin
         
         Admin newAdmin  = new Admin(nowId, Adminname , password, name,lastname, email);
         newAdmin.append_Admin();
-        nowId  +=1; 
+        nowId  -=1; 
         return "Success";
     }
     
