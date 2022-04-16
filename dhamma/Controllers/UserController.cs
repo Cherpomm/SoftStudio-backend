@@ -7,6 +7,7 @@ using System.Text.Json;
 using static dhamma.Models.User;
 
 
+
 namespace dhamma.Controllers{
     
     [ApiController]
@@ -23,7 +24,7 @@ namespace dhamma.Controllers{
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            
+
             return Ok($"Reading content #{id}.");
         }
 

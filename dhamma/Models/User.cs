@@ -3,6 +3,7 @@ using System.Diagnostics;
 namespace dhamma.Models;
 
 
+
 public class User
 {
     public static int nowId  = 0 ;
@@ -54,8 +55,20 @@ public class User
     public static Boolean isAdmin(int admindId){
         // we will use adminId as minus number
         // have to check if it in Admin.json but not now 
-        return admindId < 0 ;
+        StreamReader r = new StreamReader("./Database/Admin.json");
+        String temp_json = r.ReadToEnd();
+        r.Close();
+        var Admins = JsonConvert.DeserializeObject<List<Admin>>(temp_json);
+        foreach(Admin admin in Admins){
+            if(admin.AdminId == admindId ){
+                return true; 
+            }
+        }
+        return false;
+
+
     }
+    
     public static Boolean User_Login(String username, String password){
         StreamReader r = new StreamReader("./Database/User.json");
         String temp_json = r.ReadToEnd();
@@ -68,15 +81,19 @@ public class User
         }
         return false;
         
-     
+
         
     }
     public static List<User> getAllUsers(){
+        String temp_json = getAllUsers_JSON();
+        var user_list = JsonConvert.DeserializeObject<List<User>>(temp_json);
+        return user_list;
+    }
+    public static String getAllUsers_JSON() {
         StreamReader r = new StreamReader("./Database/User.json");
         String temp_json = r.ReadToEnd();
         r.Close();
-        var user_list = JsonConvert.DeserializeObject<List<User>>(temp_json);
-        return user_list;
+        return temp_json;
     }
     public static User GetUserbyId(int userId) {
         var user_list = getAllUsers();
@@ -89,6 +106,15 @@ public class User
         }
         return null;
     }
+    public static String GetUserbyId_JSON(int userId){
+        User user = GetUserbyId(userId);
+        String json_user = JsonConvert.SerializeObject(user, Formatting.Indented);
+        return json_user ; 
+        
+
+    }
+  
+    
 
 
     public void append_User() {
