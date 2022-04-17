@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OaES3k7tgi9UnA5A4CK9SYJcmtywhW68C3MhMwg7978tU2GBvhrjCs3QQRl676u0blgxrMdgAMzuN316VuNSLQ==",
+  "dgSpecHash": "BwYv4FyfujXuXeoW8L6+cVLTZ6WhwthmqJiQPKs/+7IVIX39dl1lJtJ70FEyj/BMghjngf32y/uh8ao7U2dRzA==",
   "success": true,
-  "projectFilePath": "E:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\poomy\\Desktop\\3rd year\\Second Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\poomy\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

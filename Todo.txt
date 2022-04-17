@@ -4,3 +4,27 @@ EmailAddressAttribute -> email for registration
 StringLengthAttribut -> Content & Comment String length
 
 dotnet dev-certs https --trust
+
+-----------Actual Todo List-----------
+1. Create UserController and AdminController to control all the method
+2. AdminController contain
+	1. getContent() -> Load data from the ContentDatabase.json to View()
+	2. createContent(string content) -> append Content Object to ContentDatabase.json
+	3. deleteContent(int contentId) -> delete Content Object in ContentDatabase.json
+	4. deleteComment(int contentId, int commentId) -> delete Comment in commentList in specific content
+	5. hideComment(int contentId, int commentId) -> hide Comment in commentList in specific content
+	6. banUser(int userId) -> change UserStatus to "banned"
+	7. unbanUser(int userId) -> change UserStatus to "active"
+	8. createComment(int contentId, string comment) -> append Comment to specific content
+	9. vote(int contentId, int commentId) -> like or dislike or none to specific
+3. UserController contain
+	1. getContent() -> Load data from the ContentDatabase.json to View()
+	2. getInfo() -> Load user info form the UserDatabase.json to View()
+	3. createComment(int contentId, string comment) -> append Comment to specific content
+	4. deleteComment(int userId, int contentId, int commentId) -> delete Comment in commentList in specific content
+	5. deleteAccount() -> delete user account
+	6. editUserInfo(string info) -> save changes
+	7. vote(int contentId, int commentId) -> like or dislike or none to specific
+4. RegistorController
+5. LoginController
+6. HomeController

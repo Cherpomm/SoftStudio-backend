@@ -1,0 +1,84 @@
+@{
+    ViewData["Title"] = "Contents Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <span id="showData" class="btn btn-default" onclick="GetContent()">Show all contents</span>
+    <div id="content"></div>
+    <input type="text" id="contentTitle" />
+    <input type="text" id="contentDes" />
+    <button class="createContent" onclick="AddContent()">Hello motherfucker</button>
+</div>
+
+<script>
+    function GetContent() {
+        $.ajax({
+            type: "GET",
+            url: "/Contents/GetContent",
+            data: {},
+            success: function (result) {
+                result = JSON.parse(result);
+                console.log(result);
+                $("#content").text(result);
+            },
+            error: function (error) {
+                alert(error);
+            }
+        })
+    }
+    function CreateContentObj() {
+        let id = Date.now();
+        let tt = $("#contentTitle").val();
+        let des = $("#contentDes").val();
+        let content = {
+            contentId: id,
+            title: tt,
+            description: des,
+            commentList: {}
+        };
+        console.log(JSON.stringify(content));
+        AddContent(JSON.stringify(content));
+    }
+
+    function gettoken() {
+        var token = '@Html.AntiForgeryToken()';
+        token = $(token).val();
+        return token;
+    }
+
+    function AddContent() {
+        let id = Date.now() % 1000000;
+        let tt = $("#contentTitle").val();
+        let des = $("#contentDes").val();
+        let content = {
+            ContentId: id,
+            Title: tt,
+            Description: des,
+            CommentList: []
+        };
+        console.log(JSON.stringify(content));
+        $.ajax({
+            type: "POST",
+            header: {
+                RequestVerification: gettoken(),
+            },
+            url: "/Contents/AddContent",
+            data: { content: JSON.stringify(content) },
+            success: function (data) {
+                console.log("From AddContent success");
+                console.log(data);
+                alert(data);
+            },
+            failure: function () {
+                console.log("From AddContent failure")
+                alert("Not Success");
+            },
+            error: function (error) {
+                console.log("From AddContent error");
+                alert(error);
+            }
+        })
+    }
+</script>
