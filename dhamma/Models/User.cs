@@ -115,6 +115,25 @@ public class User
         
 
     }
+    public String edit_User(int userId, String newname, String newLname, String newEmail, String newUsername, String newPassword){
+        
+            var user_list = getAllUsers();
+            foreach(User user in user_list){
+                if(user.UserId == userId){
+                    user.Name = newname;
+                    user.LastName = newLname; 
+                    user.Email = newEmail ;
+                    user.UserName = newUsername;
+                    user.Password = newPassword ;
+
+                    return "Edit Successfull";
+                }
+            }
+            return " No Id found ";
+
+        
+    }
+  
   
     
 
@@ -136,6 +155,13 @@ public class User
     public static String Register_User(String username,String password, String name, String  lastname,String email){
         
         User newUser  = new User(nowId, username , password, name,lastname, email);
+        newUser.append_User();
+        nowId  +=1; 
+        return "Success";
+    }
+    public static String Register_User(User newUser){
+        
+        
         newUser.append_User();
         nowId  +=1; 
         return "Success";
