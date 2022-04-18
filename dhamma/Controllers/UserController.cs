@@ -29,9 +29,9 @@ namespace dhamma.Controllers{
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Content content)
+        public IActionResult Post([FromBody]User user)
         {
-            return Ok(content);
+            return Ok(user);
         }
 
         [HttpPut]
