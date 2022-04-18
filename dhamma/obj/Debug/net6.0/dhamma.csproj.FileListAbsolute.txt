@@ -55,3 +55,8 @@ D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\User.jso
 D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.CopyComplete
 D:\Documents\GitHub\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\Admin.json
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\Admin.json
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\ContentDatabase.json
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\User.json
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.CopyComplete
