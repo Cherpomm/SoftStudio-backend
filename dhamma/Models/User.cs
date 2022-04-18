@@ -7,10 +7,12 @@ namespace dhamma.Models;
 public class User
 {
     public static int nowId  = 0 ;
+
     public User(){
         this.Status = "Active"; 
         this.UserId = nowId ; 
     }
+
     public User(int cur_id , String username , String password , String name,String lastname ,  String email)
     {
         this.UserId = cur_id;
@@ -163,8 +165,8 @@ public class User
         return "Success";
     }
     public static String Register_User(User newUser){
-        
-        
+        newUser.UserId = nowId ;
+        newUser.Status = "Active";
         newUser.append_User();
         nowId  +=1; 
         return "Success";

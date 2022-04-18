@@ -6,8 +6,6 @@ using System.IO;
 using System.Text.Json;
 using static dhamma.Models.User;
 
-
-
 namespace dhamma.Controllers{
     
     [ApiController]
@@ -31,7 +29,10 @@ namespace dhamma.Controllers{
         [HttpPost]
         public IActionResult Post([FromBody]User user)
         {
-            return Ok(user);
+
+            var x = Register_User(user);
+            return Ok(x);
+
         }
 
         [HttpPut]
