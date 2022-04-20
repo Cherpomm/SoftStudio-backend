@@ -1,69 +1,73 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using dhamma.Models;
+using static dhamma.Models.Content;
 
 using Newtonsoft.Json;
 
-namespace dhamma.Controllers;
-
-public class ContentsController : Controller
-{
-    private readonly ILogger<ContentsController> _logger;
-
-    public ContentsController(ILogger<ContentsController> logger)
+namespace dhamma.Controllers{
+    
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ContentsController : ControllerBase
     {
-        _logger = logger;
-    }
-
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
-
-    private List<Content> LoadJson()
-    {
-        using (StreamReader reader = new StreamReader("./Database/ContentDatabase.json"))
+        [HttpGet]
+        public IActionResult GetContent()
         {
-            string json = reader.ReadToEnd();
-            List<Content>? contentList = JsonConvert.DeserializeObject<List<Content>>(json) ?? new List<Content>();
-            return contentList;
+            List<Content> result = getAllContent();
+            return Ok(result);
         }
-    }
 
-    public JsonResult GetContent()
-    {
-        List<Content> content = LoadJson();
-        var json = JsonConvert.SerializeObject(content);
-        return Json(json);
-    }
+        [HttpGet("{id}")]
+        public IActionResult GetContentbyId(int id)
+        {
+            Content result = getContentbyId(id);
+            return Ok(result);
+        }
 
-    [HttpPost]
-    public JsonResult AddContent(string content)
-    {
-        try
+        [HttpPost]
+        [Route("Post")]
+        public IActionResult Post([FromBody]Content content)
         {
-            Content json = JsonConvert.DeserializeObject<Content>(content);
-            List<Content>? contentList = LoadJson();
-            contentList.Add(json);
-            System.IO.File.WriteAllText("./Database/ContentDatabase.json", JsonConvert.SerializeObject(contentList));
-            Console.WriteLine("Form Controller success");
-            return Json(JsonConvert.SerializeObject(contentList, Formatting.Indented));
+            return Ok(content);
         }
-        catch (Exception e)
+
+        [HttpPost]
+        [Route("CreateContent")]
+        public IActionResult CreateContent([FromBody]Content content)
         {
-            Console.WriteLine("Form Controller error:" + e.Message);
-            return Json(new { status = e.Message });
+            var result = createContent(content);
+            return Ok(result);
         }
+
+        [HttpPost]
+        [Route("HideContent")]
+        public IActionResult HideContent([FromBody]Content content)
+        {
+            var result = hideContent(content);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        [Route("RevealContent")]
+        public IActionResult RevealContent([FromBody]Content content)
+        {
+            var result = revealContent(content);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public IActionResult Put()
+        {
+            return Ok("Updating all the contents.");
+        }
+
+        [HttpDelete("{DeleteContent}")]
+        public IActionResult DeleteContent(Content content)
+        {
+            var result = deleteContent(content);
+            return Ok(result);
+        }
+
     }
 }

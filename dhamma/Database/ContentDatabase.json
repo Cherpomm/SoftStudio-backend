@@ -1,41 +1,41 @@
-[{
-        "ContentId": 1,
-        "Title": "Tum yung ngai hai kun por mai tid ying",
-        "Description": "I wanna ask how to ...",
-        "CommentList": [{
-                "CommentId": 1,
-                "Username": "Cherpomm",
-                "Description": "Jing krub",
-                "Date": "12/4/2022"
-            },
-            {
-                "CommentId": 2,
-                "Username": "Baofollow",
-                "Description": "Hen dauy krub",
-                "Date": "13/4/2022"
-            }
-        ]
-    },
-    {
-        "ContentId": 2,
-        "Title": "I here too",
-        "Description": "When shold I kill I here too....",
-        "CommentList": [{
-            "CommentId": 1,
-            "Username": "Glairy",
-            "Description": "Here mak jing jing krub",
-            "Date": "12/4/2022"
-        }]
-    },
-    {
-        "ContentId": 3,
-        "Title": "I Floyde jeeb tei dek",
-        "Description": "Tum yung ngai hai Floyde lurk tim",
-        "CommentList": [{
-            "CommentId": 1,
-            "Username": "dnrecording",
-            "Description": "Kor hai pai jeeb pu yai si I kuy",
-            "Date": "12/4/2022"
-        }]
-    }
+[
+  {
+    "ContentId": 1,
+    "Title": "Tum yung ngai hai kun por mai tid ying",
+    "Description": "I wanna ask how to ...",
+    "Location": "Ecc",
+    "ImageURL": "www.google.com",
+    "Tag": [
+      "Kmitl",
+      "Por",
+      "Kuy"
+    ],
+    "CommentList": [],
+    "LikeList": [],
+    "ContentStatus": "Active"
+  },
+  {
+    "ContentId": 2,
+    "Title": "I here too",
+    "Description": "When should I kill I here too....",
+    "Location": "Ecc",
+    "ImageURL": "www.google.com",
+    "Tag": [
+      "Thailand",
+      "Too",
+      "Kuy"
+    ],
+    "CommentList": [
+      {
+        "CommentId": 1,
+        "Username": "Glairy",
+        "Description": "Here mak jing jing krub",
+        "Date": "12/4/2022",
+        "Like": 0,
+        "Dislike": 0
+      }
+    ],
+    "LikeList": [],
+    "ContentStatus": "Active"
+  }
 ]

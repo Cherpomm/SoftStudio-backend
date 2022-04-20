@@ -53,3 +53,8 @@ C:\Users\poomy\Desktop\3rd year\Second Semester\SoftStudio-backend\dhamma\obj\De
 C:\Users\poomy\Desktop\3rd year\Second Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\ref\dhamma.dll
 C:\Users\poomy\Desktop\3rd year\Second Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\poomy\Desktop\3rd year\Second Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.CopyComplete
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\ContentDatabase.json
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.CopyComplete
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\Admin.json
+E:\3rd year\2nd Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\User.json

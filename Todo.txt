@@ -28,3 +28,18 @@ dotnet dev-certs https --trust
 4. RegistorController
 5. LoginController
 6. HomeController
+
+user ชื่อไม่ซ้ำ เวลาลบคอมเม้นต์
+content +img_url +location
+comment vote hideUnhide
+
+Content.cs
+	getContent --Done--
+	getContentbyId --Done
+	createContent --Done--
+	deleteContent --Done--
+	setContentStatus --Done--
+	comment --Appending--
+	deleteComment --Appending--
+	hideUserComment --Appending--
+	
