@@ -1,64 +1,78 @@
-[
-  {
-    "ContentId": 1,
-    "Title": "Tum yung ngai hai kun por mai tid ying",
-    "Description": "I wanna ask how to ...",
-    "Location": "Ecc",
-    "ImageURL": "www.google.com",
-    "Tag": [
-      "Kmitl",
-      "Por",
-      "Kuy"
-    ],
-    "CommentList": [],
-    "LikeList": [],
-    "ContentStatus": "Active"
-  },
-  {
-    "ContentId": 2,
-    "Title": "I here too",
-    "Description": "When should I kill I here too....",
-    "Location": "Ecc",
-    "ImageURL": "www.google.com",
-    "Tag": [
-      "Thailand",
-      "Too",
-      "Kuy"
-    ],
-    "CommentList": [
-      {
-        "CommentId": 1,
-        "Username": "Glairy",
-        "Description": "Here mak jing jing krub",
-        "Date": "12/4/2022",
+[{
+        "ContentId": 1,
+        "Title": "Tum yung ngai hai kun por mai tid ying",
+        "Description": "I wanna ask how to ...",
+        "Location": "Ecc",
+        "ImageURL": "www.google.com",
+        "Tag": [
+            "Kmitl",
+            "Por",
+            "Kuy"
+        ],
+        "CommentList": [{
+            "CommentId": 0,
+            "User": {
+                "UserId": 0,
+                "UserName": "uname",
+                "Password": "passworldd",
+                "Name": "name",
+                "LastName": "lname",
+                "Email": "@email.com",
+                "Status": "Active"
+            },
+            "Description": "avrvrvava",
+            "Date": "16/4/2022",
+            "LikeList": [],
+            "CommentStatus": "Active"
+        }],
         "LikeList": [],
-        "CommentStatus": "Active"
-      },
-      {
-        "CommentId": 2,
-        "Username": "Cherpomm",
-        "Description": "Here mak jing jing krub",
-        "Date": "12/4/2022",
+        "ContentStatus": "Active"
+    },
+    {
+        "ContentId": 2,
+        "Title": "I here too",
+        "Description": "When should I kill I here too....",
+        "Location": "Ecc",
+        "ImageURL": "www.google.com",
+        "Tag": [
+            "Thailand",
+            "Too",
+            "Kuy"
+        ],
+        "CommentList": [{
+                "CommentId": 1,
+                "User": {
+                    "UserId": 0,
+                    "UserName": "uname",
+                    "Password": "passworldd",
+                    "Name": "name",
+                    "LastName": "lname",
+                    "Email": "@email.com",
+                    "Status": "Active"
+                },
+                "Description": "Here mak jing jing krub",
+                "Date": "12/4/2022",
+                "LikeList": [],
+                "CommentStatus": "Active"
+            },
+            {
+                "CommentId": 2,
+                "User": {
+                    "UserId": 1,
+                    "UserName": "uname",
+                    "Password": "passworldd",
+                    "Name": "name",
+                    "LastName": "lname",
+                    "Email": "@email.com",
+                    "Status": "Active"
+                },
+                "Description": "Here mak jing jing krub",
+                "Date": "12/4/2022",
+                "LikeList": [],
+                "CommentStatus": "Active"
+            }
+        ],
         "LikeList": [],
-        "CommentStatus": "Active"
-      }
-    ],
-    "LikeList": [],
-    "ContentStatus": "Active"
-  },
-  {
-    "ContentId": 3,
-    "Title": "Wat Cho",
-    "Description": "I'm so tried",
-    "Location": "Ratchaburi",
-    "ImageURL": "www.google.com",
-    "Tag": [
-      "Wat",
-      "Thailand",
-      "Ratchaburi"
-    ],
-    "CommentList": [],
-    "LikeList": [],
-    "ContentStatus": "Hidden"
-  }
+        "ContentStatus": "Active"
+    }
 ]

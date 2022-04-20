@@ -191,6 +191,40 @@ public class Content
         return "revealContent Fail";
     }
 
+    private bool setVote(int userId, String username, String status)
+    {
+        String json = loadDatabase();
+        var content_list = JsonConvert.DeserializeObject<List<Content>>(json);
+        if (content_list != null)
+        {
+            foreach (Content content in content_list)
+            {
+                if (content.ContentId == this.ContentId)
+                {
+                    content.LikeList.Add(new Like(userId, username, status));
+                    updateDatabase(content_list);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public static String likeContent(int contentId, int userId)
+    {
+        String json = loadDatabase();
+        var content_list = JsonConvert.DeserializeObject<List<Content>>(json);
+        foreach (Content content in content_list)
+        {
+            if (content.ContentId == contentId)
+            {
+                bool result = content.setVote(1, "Cherpomm", "Like");
+                if (result == true) return "likeContent Success";
+            }
+        }
+        return "likeContent Fail";
+    }
+
+
 
     //---------------------Comment------------------------------------------------------    
 
