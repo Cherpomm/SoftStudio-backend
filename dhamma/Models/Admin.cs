@@ -8,6 +8,11 @@ public class Admin
 {
     public static int nowId  = 0 ;
 
+    public Admin(){
+        this.Status = "Active"; 
+        this.AdminId = nowId ; 
+    }
+
     public Admin(int cur_id , String Adminname , String password , String name,String lastname ,  String email)
     {
         this.AdminId = cur_id;
@@ -91,6 +96,25 @@ public class Admin
         
 
     }
+    public String edit_Admin(int AdminId, String newname, String newLname, String newEmail, String newAdminname, String newPassword){
+        
+            var Admin_list = getAllAdmins();
+            foreach(Admin Admin in Admin_list){
+                if(Admin.AdminId == AdminId){
+                    Admin.Name = newname;
+                    Admin.LastName = newLname; 
+                    Admin.Email = newEmail ;
+                    Admin.AdminName = newAdminname;
+                    Admin.Password = newPassword ;
+
+                    return "Edit Successfull";
+                }
+            }
+            return " No Id found ";
+
+        
+    }
+  
   
     
 
@@ -113,7 +137,13 @@ public class Admin
         
         Admin newAdmin  = new Admin(nowId, Adminname , password, name,lastname, email);
         newAdmin.append_Admin();
-        nowId  -=1; 
+        nowId  +=1; 
+        return "Success";
+    }
+    public static String Register_Admin(Admin newAdmin){
+       
+        newAdmin.append_Admin();
+        nowId  +=1; 
         return "Success";
     }
     
