@@ -35,27 +35,67 @@ public class User
     public String Status {get; set;}
 
 
-    public static void cancle_member(int userId){
+    public static String cancle_member(int userId){
         var user_list = getAllUsers();
+        Console.WriteLine(userId);
+        Boolean check  =false ;  
         foreach (User user in user_list) {
             if(user.UserId== userId) {
                 user.Status = "Cancled";
+                check  = true ;
             }
         }
-        var newJson = JsonConvert.SerializeObject(user_list, Formatting.Indented);
-        File.WriteAllText("./Database/User.json",newJson);
+       
+        writeTodb(user_list);
+        if(check ){
+            return  "Cancled Successfully " + userId.ToString();
+        }
+        else {
+            return " Cancled Fail";
+        }
         
 
     }
-    public static void banned_user(int userId, int adminId ) {
+    public static String activate_member(int userId){
+        var user_list = getAllUsers();
+        Boolean check  =false ;  
+        foreach (User user in user_list) {
+            if(user.UserId== userId) {
+                user.Status = "Active";
+                check  = true ;
+            }
+        }
+       
+        var newJson = JsonConvert.SerializeObject(user_list, Formatting.Indented);
+        File.WriteAllText("./Database/User.json",newJson);
+        if(check ){
+            return  "Active Successfully ";
+        }
+        else {
+            return " Active Fail";
+        }
+        
+
+    }
+    public static String banned_user(int userId, int adminId ) {
+        List<User> user_list = new List<User>();
+        Boolean check = false;
         if (isAdmin(adminId)) {
-            var user_list = getAllUsers();
+            user_list = getAllUsers();
             foreach(User user in user_list){
                 if(user.UserId == userId){
-                    user.Status = "Banned by : " + (-1*adminId).ToString();
+                    user.Status = "Banned";
+                    check = true ;
                 }
             }
         }
+        if(check){
+            writeTodb(user_list);
+            return "Banned Succcessfully";
+        }else {
+            return "Banned Fail";
+        }
+
     }
     public static Boolean isAdmin(int adminId){
        
@@ -73,17 +113,18 @@ public class User
 
     }
     
-    public static Boolean User_Login(String username, String password){
+    public static User User_Login(String username, String password){
         StreamReader r = new StreamReader("./Database/User.json");
         String temp_json = r.ReadToEnd();
         r.Close();
         var user_list = JsonConvert.DeserializeObject<List<User>>(temp_json);
         foreach(User user in user_list){
             if(user.UserName == username && user.Password == password){
-                return true; 
+                return user; 
             }
         }
-        return false;
+        return null ; 
+        
         
 
         
@@ -120,24 +161,38 @@ public class User
         
 
     }
-    public String edit_User(int userId, String newname, String newLname, String newEmail, String newUsername, String newPassword){
-        
+   
+    public static String edit_User_object(User newUser){
+            var check =0 ;
             var user_list = getAllUsers();
             foreach(User user in user_list){
-                if(user.UserId == userId){
-                    user.Name = newname;
-                    user.LastName = newLname; 
-                    user.Email = newEmail ;
-                    user.UserName = newUsername;
-                    user.Password = newPassword ;
-
-                    return "Edit Successfull";
+                if(user.UserId == newUser.UserId){
+                    user.Name = newUser.Name;
+                    user.LastName = newUser.LastName; 
+                    user.Email = newUser.Email ;
+                    user.UserName = newUser.UserName;
+                    user.Password = newUser.Password ;
+                    check =1 ;
+                    
                 }
             }
-            return " No Id found ";
+            var newJson = JsonConvert.SerializeObject(user_list, Formatting.Indented);
+            File.WriteAllText("./Database/User.json",newJson);
+            if(check ==1 ) { 
+                return "Edit Success";
+
+            }
+            else {
+                return "Edit Fail";
+            }
 
         
     }
+    public static void writeTodb(List<User> user_list){
+        var newJson = JsonConvert.SerializeObject(user_list, Formatting.Indented);
+        File.WriteAllText("./Database/User.json",newJson);
+    }
+  
   
   
     
@@ -148,7 +203,10 @@ public class User
         StreamReader r = new StreamReader("./Database/User.json");
         String temp_json = r.ReadToEnd();
         r.Close();
-        var user_list = JsonConvert.DeserializeObject<List<User>>(temp_json);
+        List<User>  user_list = new List<User>();
+        if(temp_json != null ) {
+            user_list = JsonConvert.DeserializeObject<List<User>>(temp_json);
+            }
         user_list.Add(this);
         var newJson = JsonConvert.SerializeObject(user_list, Formatting.Indented);
         File.WriteAllText("./Database/User.json",newJson);
@@ -170,6 +228,18 @@ public class User
         newUser.append_User();
         nowId  +=1; 
         return "Success";
+    }
+
+    public static List<User> getUserbyStatus (String status) {
+        List<User> temp_list =  new List<User>();
+        var all_user = getAllUsers();
+        foreach(User user in all_user) {
+            if(user.Status == status){
+                temp_list.Add(user);
+            }
+        }
+        return temp_list;
+
     }
     
   

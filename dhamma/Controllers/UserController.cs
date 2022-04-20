@@ -12,40 +12,86 @@ namespace dhamma.Controllers{
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
+       
+        [HttpGet("{id}")]
+        public IActionResult GetUser_ID(int id){
+            var result = GetUserbyId(id);
+            return Ok(result);
+        }
         [HttpGet]
-        public IActionResult Get()
-        {   
-            string result = Register_User("uname","passworldd","name","lname","@email.com");
+        public IActionResult GetUsers() {
+            var result = getAllUsers();
+            return Ok(result);
+        }
+        
+
+        [HttpPost]
+        [Route("Register")]
+        public IActionResult Register_user([FromBody]User user)
+        {
+          
+            var result = Register_User(user);
             return Ok(result);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-
-            return Ok($"Reading content #{id}.");
+        [HttpGet("{username,password}")]
+        [Route("Login")]
+        public IActionResult Login_User(String username, String password){
+            var result = User_Login(username,password);
+            return  Ok(result);
         }
 
-        [HttpPost]
-        public IActionResult Post([FromBody]User user)
-        {
-
-            var x = Register_User(user);
-            return Ok(x);
-
+        [HttpGet] // Pass as KEY and VALUE to use  || Note : Some error occur so I can't write this function properly
+        [Route("GetbyStatus")]
+        public IActionResult GetUserbyStatus(String status){ //  "Active" ,"Cancled" , "Banned"
+            var result = getUserbyStatus(status) ;
+            return Ok(result);
         }
 
         [HttpPut]
-        public IActionResult Put()
-        {
-            return Ok("Updating all the contents.");
+        [Route("Edit_user")]
+        
+        public IActionResult Edit_USER([FromBody] User newUser) { 
+            var result = edit_User_object(newUser);
+            return Ok(result);
+
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            return Ok($"Deleting a content #{id}.");
+        [HttpPut("{userId,adminId}")]
+        [Route("ban_user")]
+        
+         public IActionResult Ban_USER(int userId,  int adminId) { 
+            var result = banned_user(userId , adminId);
+            return Ok(result);
+
         }
+        
+        [HttpPut]
+        [Route("cancle_user")]
+        
+         public IActionResult Cancle_USER(int userId) { 
+            var result = cancle_member(userId );
+            //var result = GetUserbyId(userId);
+            return Ok(result);
+
+        }
+         [HttpPut]
+        [Route("activate_user")]
+        
+         public IActionResult activate_USER(int userId) { 
+            var result = activate_member(userId );
+            return Ok(result);
+
+        }
+
+
+
+        
+
+
+
+
+       
 
     }
 }

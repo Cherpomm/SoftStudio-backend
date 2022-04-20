@@ -1,65 +1,29 @@
 [
   {
     "UserId": 0,
-    "UserName": "uname",
+    "UserName": "test_postman3",
     "Password": "passworldd",
     "Name": "name",
     "LastName": "lname",
     "Email": "@email.com",
-    "Status": "Active"
+    "Status": "Cancled"
   },
   {
     "UserId": 1,
-    "UserName": "uname",
+    "UserName": "test_postman4",
     "Password": "passworldd",
     "Name": "name",
     "LastName": "lname",
     "Email": "@email.com",
-    "Status": "Active"
+    "Status": "Banned"
   },
   {
-    "UserId": 2,
-    "UserName": "uname",
-    "Password": "passworldd",
+    "UserId": 4,
+    "UserName": "newname",
+    "Password": "passs",
     "Name": "name",
-    "LastName": "lname",
+    "LastName": "LLL",
     "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 0,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 1,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 2,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 0,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
+    "Status": "Cancled"
   }
 ]
