@@ -1,20 +1,33 @@
 [
   {
     "UserId": 0,
+<<<<<<< Updated upstream
     "UserName": "uname",
+=======
+    "UserName": "test_postman3",
+>>>>>>> Stashed changes
     "Password": "passworldd",
     "Name": "name",
     "LastName": "lname",
     "Email": "@email.com",
+<<<<<<< Updated upstream
     "Status": "Active"
   },
   {
     "UserId": 1,
     "UserName": "uname",
+=======
+    "Status": "Cancled"
+  },
+  {
+    "UserId": 1,
+    "UserName": "test_postman4",
+>>>>>>> Stashed changes
     "Password": "passworldd",
     "Name": "name",
     "LastName": "lname",
     "Email": "@email.com",
+<<<<<<< Updated upstream
     "Status": "Active"
   },
   {
@@ -61,5 +74,17 @@
     "LastName": "lname",
     "Email": "@email.com",
     "Status": "Active"
+=======
+    "Status": "Banned"
+  },
+  {
+    "UserId": 4,
+    "UserName": "newname",
+    "Password": "passs",
+    "Name": "name",
+    "LastName": "LLL",
+    "Email": "@email.com",
+    "Status": "Cancled"
+>>>>>>> Stashed changes
   }
 ]
