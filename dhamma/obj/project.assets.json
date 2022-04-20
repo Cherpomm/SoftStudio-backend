@@ -48,19 +48,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\poomy\\.nuget\\packages\\": {}
+    "C:\\Users\\Voranipit\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
+      "projectUniqueName": "D:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\dhamma.csproj",
       "projectName": "dhamma",
-      "projectPath": "E:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
-      "packagesPath": "C:\\Users\\poomy\\.nuget\\packages\\",
-      "outputPath": "E:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\obj\\",
+      "projectPath": "D:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\dhamma.csproj",
+      "packagesPath": "C:\\Users\\Voranipit\\.nuget\\packages\\",
+      "outputPath": "D:\\Documents\\GitHub\\SoftStudio-backend\\dhamma\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\poomy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Voranipit\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

@@ -165,8 +165,7 @@ public class User
         return "Success";
     }
     public static String Register_User(User newUser){
-        newUser.UserId = nowId ;
-        newUser.Status = "Active";
+       
         newUser.append_User();
         nowId  +=1; 
         return "Success";
