@@ -5,6 +5,7 @@ namespace dhamma.Models;
 public class Content
 {
     public static int nowId = 0;
+    public static int nowCommentId = 0;
     public Content(){}
     public Content(String title, String description, String location, String imgURL, List<String> tag)
     {
@@ -80,8 +81,6 @@ public class Content
         var newJson = JsonConvert.SerializeObject(content_list, Formatting.Indented);
         foreach(Content aContent in content_list){
             if(aContent.ContentId >= nowId){
-                Console.WriteLine(nowId);
-                Console.WriteLine(aContent.ContentId);
                 nowId = aContent.ContentId + 1;
             }
         }
@@ -150,6 +149,7 @@ public class Content
         if(content_list == null) return false;
         foreach(Content content in content_list){
             if(this.ContentId == content.ContentId){
+
                 content.CommentList.Add(comment);
                 updateDatabase(content_list);
                 return true;
@@ -159,20 +159,39 @@ public class Content
     }
 
     public static String comment(Content content, Comment comment){
+        foreach(Comment aComment in content.CommentList){
+            if(aComment.CommentId >= nowCommentId){
+                nowCommentId = aComment.CommentId + 1;
+            }
+        }
+        comment.CommentId = nowCommentId;
         bool result = content.append_Comment(comment);
-        if(result == true) return "Success";
-        return "Fail";
+        nowCommentId = 0;
+        if(result == true) return "comment Success";
+        return "comment Fail";
     }
 
     private bool remove_Comment(Comment comment){
+        var content_list = getAllContent();
+        Content content = null;
+        foreach(Content acontent in content_list){
+            if(acontent.ContentId == this.ContentId){
+                content = acontent;
+            }
+        }
         String json = loadDatabase();
-        var content_list = JsonConvert.DeserializeObject<List<Content>>(json);
-        if(content_list == null) return false;
-        foreach(Content content in content_list){
-            if(this.ContentId == content.ContentId){
-                content.CommentList.Remove(comment);
+        content_list = JsonConvert.DeserializeObject<List<Content>>(json);
+        if(content_list != null && content != null){
+            int index = content_list.FindIndex(c => c.ContentId == content.ContentId);
+            try{
+                var itemToRemove = content_list[index].CommentList.Single(r => r.CommentId == comment.CommentId);
+                Console.WriteLine(itemToRemove);
+                content_list[index].CommentList.Remove(itemToRemove);
                 updateDatabase(content_list);
                 return true;
+            }
+            catch{
+                return false;
             }
         }
         return false;
@@ -180,14 +199,14 @@ public class Content
 
     public static String deleteComment(Content content, Comment comment){
         bool result = content.remove_Comment(comment);
-        if(result == true) return "Success";
-        return "Fail";
+        if(result == true) return "deleteComment Success";
+        return "deleteComment Fail";
     }
 
     public String deleteBannedUserComment(User user){
         String json = loadDatabase();
         var content_list = JsonConvert.DeserializeObject<List<Content>>(json);
-        if(content_list == null) return "Fail";
+        if(content_list == null) return "deleteBannedUserComment Fail";
         foreach(Content content in content_list){
             foreach(Comment comment in content.CommentList){
                 if(user.UserName == comment.Username){
@@ -195,6 +214,6 @@ public class Content
                 }
             }
         }
-        return "Success";
+        return "deleteBannedUserComment Success";
     }
 }

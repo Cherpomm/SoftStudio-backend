@@ -40,7 +40,7 @@ namespace dhamma.Controllers{
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("HideContent")]
         public IActionResult HideContent([FromBody]Content content)
         {
@@ -48,11 +48,25 @@ namespace dhamma.Controllers{
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("RevealContent")]
         public IActionResult RevealContent([FromBody]Content content)
         {
             var result = revealContent(content);
+            return Ok(result);
+        }
+
+        public class CommentParam{
+            public CommentParam(){}
+            public Content? content {get;set;}
+            public Comment? comment {get;set;}
+        }
+
+        [HttpPut]
+        [Route("Comment")]
+        public IActionResult CommentContent([FromBody]CommentParam param)
+        {
+            var result = comment(param.content, param.comment);
             return Ok(result);
         }
 
@@ -62,12 +76,20 @@ namespace dhamma.Controllers{
             return Ok("Updating all the contents.");
         }
 
-        [HttpDelete("{DeleteContent}")]
+        [HttpDelete]
+        [Route("DeleteContent")]
         public IActionResult DeleteContent(Content content)
         {
             var result = deleteContent(content);
             return Ok(result);
         }
 
+        [HttpDelete]
+        [Route("DeleteComment")]
+        public IActionResult DeleteComment(CommentParam param)
+        {
+            var result = deleteComment(param.content, param.comment);
+            return Ok(result);
+        }
     }
 }

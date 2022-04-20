@@ -39,7 +39,7 @@ Content.cs
 	createContent --Done--
 	deleteContent --Done--
 	setContentStatus --Done--
-	comment --Appending--
+	comment --Done--
 	deleteComment --Appending--
 	hideUserComment --Appending--
 	
