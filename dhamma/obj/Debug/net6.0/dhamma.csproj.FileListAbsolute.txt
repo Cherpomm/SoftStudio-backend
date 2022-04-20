@@ -89,3 +89,5 @@ D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\scopedcss\project
 D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.csproj.CopyComplete
 D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\dhamma.genruntimeconfig.cache
 D:\Documents\GitHub\SoftStudio-backend\dhamma\obj\Debug\net6.0\ref\dhamma.dll
+C:\Users\poomy\Desktop\3rd year\Second Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\Admin.json
+C:\Users\poomy\Desktop\3rd year\Second Semester\SoftStudio-backend\dhamma\bin\Debug\net6.0\Database\User.json

@@ -5,12 +5,26 @@ using static dhamma.Models.Content;
 
 using Newtonsoft.Json;
 
-namespace dhamma.Controllers{
-    
+namespace dhamma.Controllers
+{
+
     [ApiController]
     [Route("api/[controller]")]
     public class ContentsController : ControllerBase
     {
+        public class CreateParam
+        {
+            public CreateParam() { }
+            public int contentId { get; set; }
+            public Comment? comment { get; set; }
+        }
+        public class Param
+        {
+            public Param() { }
+            public int contentId { get; set; }
+            public int commentId { get; set; }
+        }
+
         [HttpGet]
         public IActionResult GetContent()
         {
@@ -26,15 +40,8 @@ namespace dhamma.Controllers{
         }
 
         [HttpPost]
-        [Route("Post")]
-        public IActionResult Post([FromBody]Content content)
-        {
-            return Ok(content);
-        }
-
-        [HttpPost]
         [Route("CreateContent")]
-        public IActionResult CreateContent([FromBody]Content content)
+        public IActionResult CreateContent([FromBody] Content content)
         {
             var result = createContent(content);
             return Ok(result);
@@ -42,53 +49,57 @@ namespace dhamma.Controllers{
 
         [HttpPut]
         [Route("HideContent")]
-        public IActionResult HideContent([FromBody]Content content)
+        public IActionResult HideContent([FromBody] int contentId)
         {
-            var result = hideContent(content);
+            var result = hideContent(contentId);
             return Ok(result);
         }
 
         [HttpPut]
         [Route("RevealContent")]
-        public IActionResult RevealContent([FromBody]Content content)
+        public IActionResult RevealContent([FromBody] int contentId)
         {
-            var result = revealContent(content);
+            var result = revealContent(contentId);
             return Ok(result);
         }
 
-        public class CommentParam{
-            public CommentParam(){}
-            public Content? content {get;set;}
-            public Comment? comment {get;set;}
-        }
-
-        [HttpPut]
+        [HttpPost]
         [Route("Comment")]
-        public IActionResult CommentContent([FromBody]CommentParam param)
+        public IActionResult CommentContent([FromBody] CreateParam commentparam)
         {
-            var result = comment(param.content, param.comment);
+            var result = comment(commentparam.contentId, commentparam.comment);
             return Ok(result);
         }
 
         [HttpPut]
-        public IActionResult Put()
+        [Route("HideComment")]
+        public IActionResult HideComment([FromBody] Param param)
         {
-            return Ok("Updating all the contents.");
+            var result = hideComment(param.contentId, param.commentId);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        [Route("RevealComment")]
+        public IActionResult RevealComment([FromBody] Param param)
+        {
+            var result = revealComment(param.contentId, param.commentId);
+            return Ok(result);
         }
 
         [HttpDelete]
         [Route("DeleteContent")]
-        public IActionResult DeleteContent(Content content)
+        public IActionResult DeleteContent([FromBody] int contentId)
         {
-            var result = deleteContent(content);
+            var result = deleteContent(contentId);
             return Ok(result);
         }
 
         [HttpDelete]
         [Route("DeleteComment")]
-        public IActionResult DeleteComment(CommentParam param)
+        public IActionResult DeleteComment([FromBody] Param param)
         {
-            var result = deleteComment(param.content, param.comment);
+            var result = deleteComment(param.contentId, param.commentId);
             return Ok(result);
         }
     }

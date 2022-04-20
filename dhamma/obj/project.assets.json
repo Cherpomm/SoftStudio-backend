@@ -53,19 +53,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
+      "projectUniqueName": "C:\\Users\\poomy\\Desktop\\3rd year\\Second Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
       "projectName": "dhamma",
-      "projectPath": "E:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
+      "projectPath": "C:\\Users\\poomy\\Desktop\\3rd year\\Second Semester\\SoftStudio-backend\\dhamma\\dhamma.csproj",
       "packagesPath": "C:\\Users\\poomy\\.nuget\\packages\\",
-      "outputPath": "E:\\3rd year\\2nd Semester\\SoftStudio-backend\\dhamma\\obj\\",
+      "outputPath": "C:\\Users\\poomy\\Desktop\\3rd year\\Second Semester\\SoftStudio-backend\\dhamma\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\poomy\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\poomy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -107,7 +109,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

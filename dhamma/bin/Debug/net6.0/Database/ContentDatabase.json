@@ -31,17 +31,34 @@
         "Username": "Glairy",
         "Description": "Here mak jing jing krub",
         "Date": "12/4/2022",
-        "LikeList": []
+        "LikeList": [],
+        "CommentStatus": "Active"
       },
       {
         "CommentId": 2,
         "Username": "Cherpomm",
         "Description": "Here mak jing jing krub",
         "Date": "12/4/2022",
-        "LikeList": []
+        "LikeList": [],
+        "CommentStatus": "Active"
       }
     ],
     "LikeList": [],
     "ContentStatus": "Active"
+  },
+  {
+    "ContentId": 3,
+    "Title": "Wat Cho",
+    "Description": "I'm so tried",
+    "Location": "Ratchaburi",
+    "ImageURL": "www.google.com",
+    "Tag": [
+      "Wat",
+      "Thailand",
+      "Ratchaburi"
+    ],
+    "CommentList": [],
+    "LikeList": [],
+    "ContentStatus": "Hidden"
   }
 ]
