@@ -13,7 +13,7 @@ namespace dhamma.Controllers{
     public class ContentsController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get()  
         {
             return Ok("Reading all the contents.");
         }

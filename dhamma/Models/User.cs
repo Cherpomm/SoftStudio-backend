@@ -224,7 +224,7 @@ public class User
             return " User name redunddant :Register Fail ";
         }
         
-        
+        newUser.UserId = findlastId();
         newUser.append_User();
         nowId  +=1; 
         return "Success";
@@ -236,7 +236,7 @@ public class User
         if(isRedundantUserName(newUser.UserName)){
             return " User name redunddant :Register Fail ";
         }
-        newUser.UserId = nowId ;
+        newUser.UserId = findlastId();
         newUser.Status = "Active";
         newUser.append_User();
         nowId  +=1; 
@@ -285,6 +285,19 @@ public class User
 
         }
         return null;
+    }
+    public static int findlastId() {
+        List<User> exist_users = getAllUsers();
+        int last =  0;
+        if(!exist_users.Any()){
+            return 0 ; 
+        }
+        foreach(User user in exist_users){
+            if(user.UserId > last){
+                last = user.UserId;
+            }
+        }
+        return last + 1 ; 
     }
     
   
