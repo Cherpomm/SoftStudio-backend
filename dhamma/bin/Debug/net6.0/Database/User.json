@@ -1,80 +1,20 @@
 [
   {
     "UserId": 0,
-<<<<<<< Updated upstream
-    "UserName": "uname",
-=======
     "UserName": "test_postman3",
->>>>>>> Stashed changes
     "Password": "passworldd",
     "Name": "name",
     "LastName": "lname",
     "Email": "@email.com",
-<<<<<<< Updated upstream
-    "Status": "Active"
-  },
-  {
-    "UserId": 1,
-    "UserName": "uname",
-=======
     "Status": "Cancled"
   },
   {
     "UserId": 1,
     "UserName": "test_postman4",
->>>>>>> Stashed changes
     "Password": "passworldd",
     "Name": "name",
     "LastName": "lname",
     "Email": "@email.com",
-<<<<<<< Updated upstream
-    "Status": "Active"
-  },
-  {
-    "UserId": 2,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 0,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 1,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 2,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-  },
-  {
-    "UserId": 0,
-    "UserName": "uname",
-    "Password": "passworldd",
-    "Name": "name",
-    "LastName": "lname",
-    "Email": "@email.com",
-    "Status": "Active"
-=======
     "Status": "Banned"
   },
   {
@@ -85,6 +25,14 @@
     "LastName": "LLL",
     "Email": "@email.com",
     "Status": "Cancled"
->>>>>>> Stashed changes
+  },
+  {
+    "UserId": 0,
+    "UserName": "neeewname",
+    "Password": "passs",
+    "Name": "name",
+    "LastName": "LLL",
+    "Email": "@emafil.com",
+    "Status": "Active"
   }
 ]

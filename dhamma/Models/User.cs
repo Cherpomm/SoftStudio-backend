@@ -216,13 +216,26 @@ public class User
         
     }
     public static String Register_User(String username,String password, String name, String  lastname,String email){
-        
         User newUser  = new User(nowId, username , password, name,lastname, email);
+        if(isRedundantEmail(newUser.Email)){
+            return  " Email redundant : Register Fail";
+        }
+        if(isRedundantUserName(newUser.UserName)){
+            return " User name redunddant :Register Fail ";
+        }
+        
+        
         newUser.append_User();
         nowId  +=1; 
         return "Success";
     }
     public static String Register_User(User newUser){
+        if(isRedundantEmail(newUser.Email)){
+            return  " Email redundant : Register Fail";
+        }
+        if(isRedundantUserName(newUser.UserName)){
+            return " User name redunddant :Register Fail ";
+        }
         newUser.UserId = nowId ;
         newUser.Status = "Active";
         newUser.append_User();
@@ -240,6 +253,38 @@ public class User
         }
         return temp_list;
 
+    }
+        public static Boolean  isRedundantUserName(String newUsername ){
+        List<User> exist_users = getAllUsers();
+        foreach(User user in  exist_users){
+            if (user.UserName == newUsername){
+                return true; 
+            }
+
+        }
+        return false ; 
+    }
+    public static Boolean  isRedundantEmail(String newEmail ){
+        List<User> exist_users = getAllUsers();
+        foreach(User user in  exist_users){
+            if (user.Email == newEmail){
+                Console.WriteLine("EmailRedundant");
+                return true; 
+            }
+
+        }
+        return false ; 
+    }
+    public static User GetUserbyEmail(String Email) {
+        var user_list = getAllUsers();
+        foreach (User user  in user_list ){
+            if(user.Email == Email){
+                return user; 
+            }
+            
+
+        }
+        return null;
     }
     
   
