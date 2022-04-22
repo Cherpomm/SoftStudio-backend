@@ -1,9 +1,10 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using dhamma.Models;
+using System;
+using System.IO;
+using System.Text.Json;
 using static dhamma.Models.Admin;
-
-using Newtonsoft.Json;
 
 namespace dhamma.Controllers{
     
@@ -11,23 +12,20 @@ namespace dhamma.Controllers{
     [Route("api/[controller]")]
     public class AdminController : ControllerBase
     {
+       
+        
         [HttpGet]
-        public IActionResult GetAdmins()
-        {
+        public IActionResult GetAdmins() {
             var result = getAllAdmins();
             return Ok(result);
         }
-        [HttpGet("{id}")]
+
+        [HttpGet]
+        [Route("GetById")]
         public IActionResult GetAdmin_ID(int id){
+            Console.WriteLine("GetbyID");
             var result = GetAdminbyId(id);
             return Ok(result);
-        }
-        [HttpPost]
-        [Route("Post")]
-        public IActionResult Post([FromBody]Admin Admin)
-        {
-            
-            return Ok(Admin);
         }
         
 
@@ -50,7 +48,16 @@ namespace dhamma.Controllers{
         [HttpGet] // Pass as KEY and VALUE to use  || Note : Some error occur so I can't write this function properly
         [Route("GetbyStatus")]
         public IActionResult GetAdminbyStatus(String status){ //  "Active" ,"Cancled" , "Banned"
+            Console.WriteLine("Status");
             var result = getAdminbyStatus(status) ;
+            return Ok(result);
+        }
+        
+        [HttpGet] // Pass as KEY and VALUE to use  || Note : Some error occur so I can't write this function properly
+        [Route("GetbyEmail")]
+        public IActionResult GetbyEmail(String Email){ //  "Active" ,"Cancled" , "Banned"
+            Console.WriteLine("Status");
+            var result =GetAdminbyEmail(Email);
             return Ok(result);
         }
 

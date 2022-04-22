@@ -8,6 +8,11 @@ public class Admin
 {
     public static int nowId  = 0 ;
 
+    public Admin(){
+        this.Status = "Active"; 
+        this.AdminId = nowId ; 
+    }
+
     public Admin(int cur_id , String Adminname , String password , String name,String lastname ,  String email)
     {
         this.AdminId = cur_id;
@@ -72,6 +77,7 @@ public class Admin
         
 
     }
+    
     
     public static Admin Admin_Login(String Adminname, String password){
         StreamReader r = new StreamReader("./Database/Admin.json");
@@ -176,14 +182,28 @@ public class Admin
         
     }
     public static String Register_Admin(String Adminname,String password, String name, String  lastname,String email){
-        
         Admin newAdmin  = new Admin(nowId, Adminname , password, name,lastname, email);
+        if(isRedundantEmail(newAdmin.Email)){
+            return  " Email redundant : Register Fail";
+        }
+        if(isRedundantAdminName(newAdmin.AdminName)){
+            return " Admin name redunddant :Register Fail ";
+        }
+        
+        newAdmin.AdminId = findlastId();
         newAdmin.append_Admin();
         nowId  -=1; 
         return "Success";
     }
     public static String Register_Admin(Admin newAdmin){
-       
+        if(isRedundantEmail(newAdmin.Email)){
+            return  " Email redundant : Register Fail";
+        }
+        if(isRedundantAdminName(newAdmin.AdminName)){
+            return " Admin name redunddant :Register Fail ";
+        }
+        newAdmin.AdminId = findlastId();
+        newAdmin.Status = "Active";
         newAdmin.append_Admin();
         nowId  -=1; 
         return "Success";
@@ -199,6 +219,51 @@ public class Admin
         }
         return temp_list;
 
+    }
+        public static Boolean  isRedundantAdminName(String newAdminname ){
+        List<Admin> exist_Admins = getAllAdmins();
+        foreach(Admin Admin in  exist_Admins){
+            if (Admin.AdminName == newAdminname){
+                return true; 
+            }
+
+        }
+        return false ; 
+    }
+    public static Boolean  isRedundantEmail(String newEmail ){
+        List<Admin> exist_Admins = getAllAdmins();
+        foreach(Admin Admin in  exist_Admins){
+            if (Admin.Email == newEmail){
+                Console.WriteLine("EmailRedundant");
+                return true; 
+            }
+
+        }
+        return false ; 
+    }
+    public static Admin GetAdminbyEmail(String Email) {
+        var Admin_list = getAllAdmins();
+        foreach (Admin Admin  in Admin_list ){
+            if(Admin.Email == Email){
+                return Admin; 
+            }
+            
+
+        }
+        return null;
+    }
+    public static int findlastId() {
+        List<Admin> exist_Admins = getAllAdmins();
+        int last =  -1;
+        if(!exist_Admins.Any()){
+            return -1; 
+        }
+        foreach(Admin Admin in exist_Admins){
+            if(Admin.AdminId < last){
+                last = Admin.AdminId;
+            }
+        }
+        return last - 1 ; 
     }
     
   
